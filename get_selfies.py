@@ -64,7 +64,7 @@ def NeutraliseCharges(smiles, reactions=None):
         return (Chem.MolToSmiles(mol, True), True)
     else:
         return (smiles, False)
-
+_reactions=None
 
 def clean_smiles(s):
     """ Function to clean smiles; change as needed """
