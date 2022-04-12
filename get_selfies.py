@@ -83,6 +83,7 @@ def process_one(s):
 
 def add_selfies(path='data/moses_train.csv', processes=10):
     #loading smiles from csv
+    print(path)
     train = pd.read_csv(path, index_col=0)
     smiles = train.smiles
     

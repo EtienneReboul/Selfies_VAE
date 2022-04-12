@@ -67,10 +67,11 @@ class VAEDecoder(nn.Module):
 
         # Simple Decoder
         self.decode_RNN = nn.GRU(
-            input_size=latent_dimension,
+            input_size=out_dimension,
             hidden_size=gru_neurons_num,
             num_layers=gru_stack_size,
             batch_first=False)
+        self.rnn_in = nn.Linear(self.latent_dimension, out_dimension)
 
         self.decode_FC = nn.Sequential(
             nn.Linear(gru_neurons_num, out_dimension),
